@@ -1,0 +1,215 @@
+
+<!DOCTYPE html>
+<html lang="es" class="h-100 ">
+<head>
+  <meta charset="UTF-8">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Inicio</title>
+
+  <!-- Esto es bootstrap -->
+  <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
+  <script src="plugins/bootstrap/js/bootstrap.bundle.js"></script>
+
+  <!-- Este es mi estilo -->
+  <link rel="stylesheet" href="paginas/styles/mainstyles.css">
+
+</head>
+
+<body>
+
+  <!-- MENÚ -->
+  <header>
+    <!-- Narvar desplegable al dar click y contenido-->
+    <div id="navbarHeader" class="collapse bg-dark">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-8 col-md-7 py-4">
+            <h4 class="text-white">Acercar de nosotros</h4>
+            <p class="text-muted">Somos una institución que facilita soluciones educativas tanto para personas como para colegios y otras instituciones; nos enfocamos en facilitar procesos educativos y brindar cursos de preparación especializados.</p>
+          </div>
+          <div class="col-sm-4 offset-md-1 py-4">
+            <h4 class="text-white">Contactanos</h4>
+            <ul class="list-unstyled">
+              <li><a href="https://api.whatsapp.com/send?phone=573117206123&text=Buen+d%C3%ADa,+necesito+informaci%C3%B3n+de+los+programas+educativos.&utm_source=webpage" class="text-white">WhatsApp</a></li>
+              <li><a href="https://www.facebook.com/cleicolombia/" class="text-white">Vísitanos en Facebook</a></li>
+              <li><a href="https://www.youtube.com/channel/UCqjg1DQBzTBxR29qB5eAoVgss" class="text-white">Canal de YouTube</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div> 
+
+    <!-- Narvar botones de los modulos de inicio, estidiante e ingreso a personal -->
+    <div class="navbar fixed-top navbar-dark bg-dark shadow-sm">
+      <div class="container">
+        <!-- logo en el narvar -->
+        <a href="index.html" class="navbar-brand d-flex align-items-center">
+          <img src="media/logo/logoinstitutoclei.png"  class="me-2" wsidth="40" height="40">
+          <strong>Instituto CLEI</strong>
+        </a>
+        <nav class="fw-bold nav nav-masthead nav-pills nav-fill justify-content-center float-md-end">
+          <ul class="nav nav-pills">
+            <!-- Boton de inicio -->
+            <a class="nav-link active" aria-current="page"  style="margin-left: 20px"  href="index.html">Inicio</a>
+            <!-- Boton de Estudiante -->
+            <a class="nav-link" style="margin-left: 20px" href="paginas/consultaestudiante.php">Estudiante</a>
+            <!-- Boton de ingreso al sistema -->
+            <a class="nav-link" style="margin-left: 20px" href="paginas/empleado.php">Ingreso de personal</a>
+          </ul>
+        </nav>
+        <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>      
+    </div>
+  </header>
+
+  <!--CONTENIDO DE LA PÁGINA PRINCIPAL "INICIO"" -->
+  <main>
+
+    <!-- Carousel de imagenes -->
+    <div id="carouselExampleDark" class="carousel carousel-dark slide"   data-bs-touch="false">
+      <!-- Indicadores de en cual diapositiva estoy -->
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <!-- Contenido y dipositivas-->
+      <div class="carousel-inner">
+        <!-- Se define la diapositiva que aparece al iniciar "Consulta de esudiante" -->
+        <div class="carousel-item active" >
+          <img src="media/imagenes/diapositiva1.jpg" class="d-block w-100" alt="diapositiva1" style="padding: 0px 100px ;">
+          <div class="container">
+            <div class="text-white carousel-caption text-start;">
+              <h1 >Bienvenido al sistema de consulta estudiantil</h1>
+              <p>Informate de tu estado es nuestra Institución</p>
+              <p ><a class="btn btn-lg btn-primary" href="paginas/consultaestudiante.php">Consulta aqui</a></p>
+            </div>
+          </div>
+        </div>
+        <!-- Contenido diapositiva 2 "Más información de la Institución" -->
+        <div class="carousel-item">
+          <img src="media/imagenes/diapositiva2.jpg" class="d-block w-100" alt="diapositiva2" style="padding: 0px 100px ;">
+          <div class="container">
+            <div class="text-white carousel-caption text-start text-center" style="padding: 40px;">
+              <h1>Insitituto CLEI</h1>
+              <p>Somos una institución que facilita soluciones educativas tanto para personas como para colegios y otras instituciones; nos enfocamos en facilitar procesos educativos y brindar cursos de preparación especializados.</p>
+              <p><a class="btn btn-lg btn-primary" href="https://institutoclei.com/">Visita nuestar página Web</a></p>
+            </div>
+          </div>
+        </div>
+        <!-- Contenido diapositiva 3 "Asesor" -->
+        <div class="carousel-item">
+          <img src="media/imagenes/diapositiva3.jpg" class="d-block w-100" alt="diapositiva3" style="padding: 0px 100px ;"  >
+          <div class="text-white carousel-caption d-none d-md-block">
+            <h1>Asesores expertos</h1>
+            <p>Contactanos si tienes dudas o inquietudes</p>          
+            <p><a class="btn btn-lg btn-primary" href="#">Contactanos</a></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Boton a la anterior diapositiva y con tooltip-->
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev" data-toggle="tooltip" title="Anterior">   
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Anterior</span>   
+      </button>
+      <!-- Boton a la siguiente diapositiva y con tooltip-->
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next" data-toggle="tooltip" title="Siguiente">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Siguiente</span>
+      </button>
+    </div>
+
+    <!-- Linea de separación de contenido visible con estilo -->
+    <hr class="featurette-divider">
+  
+    <!-- CONTENIDO COMERCIAL -->
+    <!-- Centra el contenido de la página -->
+    <div class="container-fluid marketing" style="padding: 10px 80px  10px 80px">  
+    
+      <!-- Primer bloque de información "Portal de pagos"  -->
+      <div class="row featurette">
+        
+        <div class="col-md-7 order-md-1">
+          <h1 class="featurette-heading fw-normal lh-1"> Realiza el pago de tu mensualidad</h1><br>
+          <p class="lead fs-4">Recuerda que estar al día con tus pagos es un compromiso con la Institución, puedes realizarlo por nuestros diferentes medios.</p>
+          <ul class="text-muted fs-4" >
+            <li>Bancolombia</li>
+            <li>Nequi</li>
+            <li>Tarjetas crédito o débito</li>
+            <li>Efectivo</li>
+            <li>Otros</li>
+          </ul>
+          <br>
+
+          <a type="button" class="btn btn-primary  btn-lg" href="https://institutoclei.com/pagos">Portal de pagos</a></p>
+        </div>
+        <!-- Imagen que completa el bloque de información 1 -->
+        <div class="col-md-5 order-md-1">
+          <img src="media/imagenes/portaldepagos1.jpg" class="rounded mx-auto d-block bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="400" height="400" role="img"  alt="Asesores">
+        </div>
+      </div>
+
+      <!-- Linea de separación visible con estilo -->
+      <hr class="featurette-divider">
+    
+      <!-- Segundo bloque de información "Asistencia a clases"  -->
+      <div class="row featurette">
+        <div class="col-md-7 order-md-2"  >
+          <h1 class="featurette-heading fw-normal lh-1">Tu asistencia a clases es muy importante </h1> <br>
+          <p class="lead fs-4">Adicional recuerda que cada una de nuestras clases quedán grabadas y guardadas en la plataforma virtual en caso de que no logres asistir a la clase en vivo.</p>
+          <br>
+          <h2 class="fw-normal">¿Necesitas un cambio de horario?</h2> <br>
+          <p class="lead fs-4">Escríbenos a nuestro canal estudiantil para que un asesor te brinde más información para realizar el cambio.</p> <br>
+          <button type="button" class="btn btn-primary  btn-lg">Escríbenos</button>
+        </div>
+        <!-- Imagen que completa el bloque de información 2 -->
+        <div class="col-md-5 order-md-1">
+          <img src="media/imagenes/asistenciaaclases.jpg" class="rounded mx-auto d-block bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" role="img"  alt="Virtualidad">
+        </div>
+      </div>
+
+      <!-- Linea de separación visible con estilo -->
+      <hr class="featurette-divider">
+
+      <!-- Tercer bloque de información "Portal de pagos"  -->
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading fw-normal lh-1">Nuestro equipo</h2><br>
+          <p class="lead fs-4">Uno de los pilares fundamentales de nuestros servicios es la atención oportuna a los estudiantes, de esta forma disponemos de un equipo de expertos que brindan soporte académico y técnico eficiente, la atención se realiza por múltiples canales según la necesidad del estudiante.</p><br>
+          <p><a class="btn btn-primary btn-lg" href="https://api.whatsapp.com/send?phone=573117206123&text=Buen+d%C3%ADa,+necesito+informaci%C3%B3n+de+los+programas+educativos.&utm_source=webpage">Escríbenos</a></p>
+        </div>
+        <!-- Imagen que completa el bloque de información 3 -->
+        <div class="col-md-5 order-md-1">
+          <img src="media/imagenes/asesores.jpg" class="rounded mx-auto d-block bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="400" height="400" role="img"  alt="Asesores">
+        </div>
+      </div>
+
+      <!-- Linea de separación visible con estilo -->
+      <hr class="featurette-divider">
+
+      <!-- Footer -->
+      <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+        <p class="col-md-4 mb-0 text-muted"> 2022 Creado por PAOVA SYSTEMS</p>
+        <!-- Logo de PAOVA SYSTEM -->
+        <a href="index.html" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+          <img src="media/logo/logopaovadark.png" class="bi me-2" width="40" height="40"><use xlink:href="#bootstrap"/></svg>
+        </a>
+        <!-- boton para regresar al inicio u direccionar a el WhatsApp estudiantil de la Insitución -->
+        <ul class="nav col-md-4 justify-content-end">
+          <li class="nav-item"><a href="index.html" class="nav-link px-2 text-muted">Inicio</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Soporte</a></li>
+        </ul>
+      </footer>
+    </div>
+
+
+  </main>
+
+</body>
+</html>

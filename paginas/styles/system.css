@@ -1,0 +1,111 @@
+main {
+  display: flex;
+  flex-wrap: nowrap;
+  height: 100vh;
+  max-height: 100vh;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+
+.hijo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+  
+.hijo-2 {
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+
+}
+
+/* Divisores de contenido */
+
+.b-example-divider {
+  flex-shrink: 0;
+  width: 1.5rem;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, .1);
+  border: solid rgba(0, 0, 0, .15);
+  border-width: 1px 0;
+  box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+}
+
+.b-example-divider {
+  height: 3rem;
+  background-color: rgba(0, 0, 0, .1);
+  border: solid rgba(0, 0, 0, .15);
+  border-width: 1px 0;
+  box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+}
+
+.b-divider {
+  
+  height: 15px;
+  border-width: 8px 0;
+}
+
+.b-divider {
+  width: 15px;
+  height: 10px;
+
+  border-width: 1px 0;
+}
+
+.b-divider-2 {
+  height: 80px;
+  border-width: 80px 0;
+}
+
+.b-divider-2 {
+  width: 80px;
+  height: 80px;
+
+  border-width: 1px 0;
+}
+
+/* Divisores de contenido */
+
+.bg-purple { background-color: #02329b; }
+
+.hijo-3 {
+  display: flex;
+  flex-direction: column;
+  justify-content:first baselines;
+
+  padding-top: 80px;
+
+}
+.text-bg-dark{
+  background-color: #2545ac;
+}
+
+
+.form-signin {
+  max-width: 350px;
+  max-height: 600px;
+}
+
+.p-4 {
+  padding: 3rem!important;
+}
+
+.form-signin .form-floating:focus-within {
+  z-index: 2;
+}
+
+.form-signin input[type="email"] {
+  margin-bottom: 50px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+  margin-bottom: 50px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
