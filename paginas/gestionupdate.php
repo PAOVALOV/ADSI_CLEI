@@ -5,35 +5,34 @@ error_reporting(0);
 
 $validar = $_SESSION['usuario'];
 
-if( $validar == null || $validar = ''){
+if ($validar == null || $validar = '') {
 
   header("Location: empleado.php");
   die();
-  
 }
 
 
 require_once '../conexion/conexion.php'; /*LLama la conexión*/
 
-$db=new db_conexion();
+$db = new db_conexion();
 
 
-$id=$_POST['id_estudiante'];
-$documento=$_POST['documento'];
-$nombre=$_POST['nombre'];
-$apellido=$_POST['apellido'];
-$email=$_POST['email'];
-$fecha=$_POST['fecha'];
-$numero_estudiante=$_POST['numero_estudiante'];
-$ciudad=$_POST['ciudad'];
-$discapacidad=$_POST['discapacidad'];
-$curso=$_POST['curso'];
-$horario=$_POST['horario'];
-$acudiente=$_POST['acudiente'];
+$id = $_POST['id_estudiante'];
+$documento = $_POST['documento'];
+$nombre = $_POST['nombre'];
+$apellido = $_POST['apellido'];
+$email = $_POST['email'];
+$fecha = $_POST['fecha'];
+$numero_estudiante = $_POST['numero_estudiante'];
+$ciudad = $_POST['ciudad'];
+$discapacidad = $_POST['discapacidad'];
+$curso = $_POST['curso'];
+$horario = $_POST['horario'];
+$acudiente = $_POST['acudiente'];
 
 
 
-$sql="UPDATE estudiantes SET
+$sql = "UPDATE estudiantes SET
 documento_estudiante = '$documento',
 nombre_estudiante = '$nombre',
 apellido_estudiante = '$apellido',
@@ -51,12 +50,8 @@ echo $numero_estudiante;
 
 $query = mysqli_query($db->conectar(), $sql);           /*pasa la query a la variable resultado*/
 
-    if($query){
-        Header("Location:gestion.php");
+if ($query) {
+  Header("Location:gestion.php");
 
-        echo 'Fue actualizado con exito';
-    }
-?>
-
-
-   
+  echo 'Fue actualizado con exito';
+}

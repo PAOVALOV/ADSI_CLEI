@@ -5,11 +5,10 @@ error_reporting(0);
 
 $validar = $_SESSION['usuario'];
 
-if( $validar == null || $validar = ''){
+if ($validar == null || $validar = '') {
 
   header("Location: empleado.php");
   die();
-  
 }
 ?>
 
@@ -102,7 +101,7 @@ if( $validar == null || $validar = ''){
       </ul>
       <hr>
       <div class="dropdown">
-        <a  href="_sesion/cerrarSesion.php"><button type="button" class="btn btn-danger" style="background-color: rgb(168, 4, 4);">Salir del sistema</button></a>
+        <a href="_sesion/cerrarSesion.php"><button type="button" class="btn btn-danger" style="background-color: rgb(168, 4, 4);">Salir del sistema</button></a>
 
       </div>
     </div>
@@ -113,7 +112,7 @@ if( $validar == null || $validar = ''){
 
 
     <!-- CONTENIDO DEL MODULO FINANCIERO -->
-    <div class="container my-5 hijo-2"> 
+    <div class="container my-5 hijo-2">
       <div class="row p-5 pb-5 pe-lg-5 pe-lg-5 rounded-3 border shadow-lg overflow-auto">
         <div class="text-center">
           <h1 class="display-4 fw-bold lh-2 text-center">Gestión Financiera</h1><br>
@@ -182,151 +181,153 @@ if( $validar == null || $validar = ''){
 
                 if ($consultaestudiante == $registro['documento_estudiante']) {
                   $contadornoexiste++;
-                                                   //Si existe realiza la consulta e informa que puede ver el informe
+                  //Si existe realiza la consulta e informa que puede ver el informe
           ?>
 
-</div>
-<div>
-<figure class="text-center">
-  <blockquote class="blockquote">
-    <p>Pagos realizados hasta la fecha</p>
-  </blockquote>
-  <figcaption class="blockquote-footer">
-   Por: <?php echo $registro['nombre_estudiante'] . " " . $registro['apellido_estudiante']; ?>  </figcaption>
-</figure>
-</div>
+        </div>
+        <div>
+          <figure class="text-center">
+            <blockquote class="blockquote">
+              <p>Pagos realizados hasta la fecha</p>
+            </blockquote>
+            <figcaption class="blockquote-footer">
+              Por: <?php echo $registro['nombre_estudiante'] . " " . $registro['apellido_estudiante']; ?> </figcaption>
+          </figure>
+        </div>
 
-<table class="table table-striped table-bordered border border-5">
-                            <tbody>
-                            <thead class="table-dark">
-                  <th>#</th>
-                  <th>Fecha del pago</th>
-                  <th>$ Valor</th>
-                  <th>Metodo</th>
-                  <th>Encargado</th> 
+        <table class="table table-striped table-bordered border border-5">
+          <tbody>
+            <thead class="table-dark">
+              <th>#</th>
+              <th>Fecha del pago</th>
+              <th>$ Valor</th>
+              <th>Metodo</th>
+              <th>Encargado</th>
 
-  </thead>
-                                <tr>
-                                    <?php
-                                      $contador=0;
-                                    $sql2 = "SELECT * FROM financiero
+            </thead>
+            <tr>
+              <?php
+                  $contador = 0;
+                  $sql2 = "SELECT * FROM financiero
                                     WHERE documentoestudiante_financiero ='$consultaestudiante'";
 
-                                    $resultado2 = mysqli_query($db->conectar(), $sql2);         /*pasa la query a la variable resultado*/
-                                    while ($registro2 = mysqli_fetch_array($resultado2)) {      /*pasa a vector*/
-                                      $contador++;
-                                        $db->db_cerrar()
+                  $resultado2 = mysqli_query($db->conectar(), $sql2);         /*pasa la query a la variable resultado*/
+                  while ($registro2 = mysqli_fetch_array($resultado2)) {      /*pasa a vector*/
+                    $contador++;
+                    $db->db_cerrar()
 
-                                    ?>
-                                <tr>
-                                    <td> <?php echo " " . $contador?></td>
-                                    <td> <?php echo " " . $registro2['fechadepago_financiero']; ?></td>
-                                    <td> <?php echo " " . $registro2['valorcancelado_financiero']; ?></td>
-                                    <td> <?php echo " " . $registro2['metododepago_financiero']; ?></td>
-                                    <td> <?php echo " " . $registro2['empleado_financiero']; ?></td>
-                                </tr>
+              ?>
+            <tr>
+              <td> <?php echo " " . $contador ?></td>
+              <td> <?php echo " " . $registro2['fechadepago_financiero']; ?></td>
+              <td> <?php echo " " . $registro2['valorcancelado_financiero']; ?></td>
+              <td> <?php echo " " . $registro2['metododepago_financiero']; ?></td>
+              <td> <?php echo " " . $registro2['empleado_financiero']; ?></td>
+            </tr>
 
-                    </div>
+      </div>
 
-                <?php
-                                    }
-                ?>
+    <?php
+                  }
+    ?>
 
-                </tr>
-                </tbody>
-                </table><br><hr>
-
-
-
-                  <div class="container p-4 p-md-12 border rounded-4 border bg-light bg-gradient p-2 border-5 text-center" style="padding: 100px;">
-                    <div class="form-row">
-
-                    <h2>Agregar un nuevo pago</h2><br><hr>
-
-                      <div class="bd-example-snippet bd-code-snippet text-start">
+    </tr>
+    </tbody>
+    </table><br>
+    <hr>
 
 
-                        <form class="row" method="POST" action="financiero.php">
-                        <input type="hidden" name="documento_form_2" value="<?php echo  $registro['documento_estudiante'] ?>">
 
-                          <div class="col-sm-6">
-                            <label class="form-label">Número de documento</label>
-                            <input type="text" class="form-control" name="documento_form_2" placeholder="Número de documento" value="<?php echo $registro['documento_estudiante'] ?>" disabled>
-                          </div>
+    <div class="container p-4 p-md-12 border rounded-4 border bg-light bg-gradient p-2 border-5 text-center" style="padding: 100px;">
+      <div class="form-row">
 
-                          <div class=" col-md-6 mb-3">
-                            <label for="inputEmail4" class="form-label">Monto pagado</label>
-                            <input type="text" name="monto_pagado_form" class="form-control" id="inputEmail4" placeholder="Valor en números">
-                          </div>
+        <h2>Agregar un nuevo pago</h2><br>
+        <hr>
+
+        <div class="bd-example-snippet bd-code-snippet text-start">
 
 
-                          <div class="col-md-6 mb-3">
-                            <label for="inputEmail4" class="form-label">Fecha de cuando el pago fue realizado</label>
-                            <input type="date" name="fecha_pago_form" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                          </div>
+          <form class="row" method="POST" action="financiero.php">
+            <input type="hidden" name="documento_form_2" value="<?php echo  $registro['documento_estudiante'] ?>">
 
-                          <div class="col-md-6 mb-3">
-                            <label for="inputEmail4" class="form-label">Referencia del pago</label>
-                            <input type="text" name="referencia_form" class="form-control" id="inputEmail4" placeholder="Valor en números">
-                          </div>
+            <div class="col-sm-6">
+              <label class="form-label">Número de documento</label>
+              <input type="text" class="form-control" name="documento_form_2" placeholder="Número de documento" value="<?php echo $registro['documento_estudiante'] ?>" disabled>
+            </div>
 
-                          <div class="col-md-6 mb-3">
-                            <label for="inputState" class="form-label">Metodo de pago</label>
-                            <select name="metodo_form" id="inputState" class="form-select">
-                              <option selected>Selecione uno</option>
-                              <option value="Bancolombia">Bancolombia</option>
-                              <option value="Nequi">Nequi</option>
-                              <option value="Payu">Payu</option>
-                              <option value="Efectivo">Efectivo</option>
-                            </select>
-                          </div>
+            <div class=" col-md-6 mb-3">
+              <label for="inputEmail4" class="form-label">Monto pagado</label>
+              <input type="text" name="monto_pagado_form" class="form-control" id="inputEmail4" placeholder="Valor en números">
+            </div>
 
-                          <div class="col-md-6 mb-3">
-                            <label for="fechadenacimiento" class="form-label">Persona a cargo de subir el pago</label>
-                            <select name="empleado_form" class="form-select" aria-label="Default select example">
-                              <option selected>Seleccione su nombre</option>
-                              <option value="Julian Paez">Julian Paez</option>
-                              <option value="Laura Vanegas">Laura Vanegas</option>
-                              <option value="Sofia Torres">Sofia Torres</option>
-                              <option value="Mateo López">Mateo López</option>
-                            </select>
-                          </div>
 
-                          <!-- <div class="col-md-6 mb-3">
+            <div class="col-md-6 mb-3">
+              <label for="inputEmail4" class="form-label">Fecha de cuando el pago fue realizado</label>
+              <input type="date" name="fecha_pago_form" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            </div>
+
+            <div class="col-md-6 mb-3">
+              <label for="inputEmail4" class="form-label">Referencia del pago</label>
+              <input type="text" name="referencia_form" class="form-control" id="inputEmail4" placeholder="Valor en números">
+            </div>
+
+            <div class="col-md-6 mb-3">
+              <label for="inputState" class="form-label">Metodo de pago</label>
+              <select name="metodo_form" id="inputState" class="form-select">
+                <option selected>Selecione uno</option>
+                <option value="Bancolombia">Bancolombia</option>
+                <option value="Nequi">Nequi</option>
+                <option value="Payu">Payu</option>
+                <option value="Efectivo">Efectivo</option>
+              </select>
+            </div>
+
+            <div class="col-md-6 mb-3">
+              <label for="fechadenacimiento" class="form-label">Persona a cargo de subir el pago</label>
+              <select name="empleado_form" class="form-select" aria-label="Default select example">
+                <option selected>Seleccione su nombre</option>
+                <option value="Julian Paez">Julian Paez</option>
+                <option value="Laura Vanegas">Laura Vanegas</option>
+                <option value="Sofia Torres">Sofia Torres</option>
+                <option value="Mateo López">Mateo López</option>
+              </select>
+            </div>
+
+            <!-- <div class="col-md-6 mb-3">
                   <label for="formFile" class="form-label">Subir comprobante de pago</label>
                   <input class="form-control" type="file" id="formFile">
                   </div> -->
 
-                          <br>
-                          <div class="col-12">
-                            <button type="submit" name="btn_pago" class="btn btn-primary btn-lg">Subir pago</button>
-                          </div>
+            <br>
+            <div class="col-12">
+              <button type="submit" name="btn_pago" class="btn btn-primary btn-lg">Subir pago</button>
+            </div>
 
-                        </form>
+          </form>
 
-                      </div>
-                    </div>
-                    
-
-                  <small class="text-muted"> Año 2022</small>
         </div>
+      </div>
 
-  <?php
+
+      <small class="text-muted"> Año 2022</small>
+    </div>
+
+<?php
                 }
               }
             }
           }
           if ($contadornoexiste == 0 and $contadorvacio == 0) {
-  ?>
-  <div class="alert alert-danger" role="alert">
-    <strong>Estudiante no encontrado en el sistema.</strong>
-    <br>
-    <!-- (Si no existe en la base de datos) Boton para crear un nuevo estudiante -->
+?>
+<div class="alert alert-danger" role="alert">
+  <strong>Estudiante no encontrado en el sistema.</strong>
+  <br>
+  <!-- (Si no existe en la base de datos) Boton para crear un nuevo estudiante -->
 
-  </div>
-  <br>
-  <a href="../paginas/gestioncrear.php"> <button type="button" class="btn btn-success"> Crear estudiante</button></a>
-  <br>
+</div>
+<br>
+<a href="../paginas/gestioncrear.php"> <button type="button" class="btn btn-success"> Crear estudiante</button></a>
+<br>
 
 <?php
           }
@@ -340,19 +341,17 @@ if (isset($_POST['btn_pago'])) {
   $contadorvacio2  = 0;                              /*Inicializa las variables en 0 para trabajar*/
   $contadorexiste2 = 0;
 
-  $documento = $_POST["documento_form_2"]; 
+  $documento = $_POST["documento_form_2"];
   $montoPagado = $_POST["monto_pagado_form"];
   $fechaPago = $_POST["fecha_pago_form"];
   $referenciaPago = $_POST["referencia_form"];
   $metodoPago = $_POST["metodo_form"];
   $empleado = $_POST["empleado_form"];
- # $comprobante = $_POST["formFile"];
+  # $comprobante = $_POST["formFile"];
 
 
-  if ($documento    == "") 
-
-  { 
-                                       /*si está alguno de los campos vacios*/
+  if ($documento    == "") {
+    /*si está alguno de los campos vacios*/
     echo "
        <div class='container'>
          <center>
@@ -428,15 +427,15 @@ if (isset($_POST['btn_pago'])) {
 }
 ?>
 
-      </div>
+</div>
 
 
-    </div>
-    </div>
+</div>
+</div>
 
 
 
-    <div class="b-example-divider"></div>
+<div class="b-example-divider"></div>
 
   </main>
 

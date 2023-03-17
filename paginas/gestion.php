@@ -5,11 +5,10 @@ error_reporting(0);
 
 $validar = $_SESSION['usuario'];
 
-if( $validar == null || $validar = ''){
+if ($validar == null || $validar = '') {
 
   header("Location: empleado.php");
   die();
-  
 }
 ?>
 
@@ -104,7 +103,7 @@ if( $validar == null || $validar = ''){
       </ul>
       <hr>
       <div class="dropdown">
-        <a  href="_sesion/cerrarSesion.php"><button type="button" class="btn btn-danger" style="background-color: rgb(168, 4, 4);">Salir del sistema</button></a>
+        <a href="_sesion/cerrarSesion.php"><button type="button" class="btn btn-danger" style="background-color: rgb(168, 4, 4);">Salir del sistema</button></a>
 
       </div>
     </div>
@@ -117,7 +116,7 @@ if( $validar == null || $validar = ''){
     <div class="container my-5 hijo-2">
 
       <div class="row p-5 rounded-3 border shadow-lg overflow-auto ">
-      <div>
+        <div>
           <h1 class="display-4 fw-bold lh-2 text-center">Gestión estudiantil</h1><br>
           <p class="lead text-center"> Ingresa el número de documento del estudiante sin espacios ni puntos
           </p><br>
@@ -190,58 +189,58 @@ if( $validar == null || $validar = ''){
                   <!-- Consulta los datos de estudiante -->
                   <br>
                   <div class="overflow-auto container p-4 p-md-12 border rounded-4 border bg-light bg-gradient p-2 border-5 " style="padding: 100px;">
-                    <div  class="overflow-auto" class="bd-example-snippet bd-code-snippet text-start">
-                      <h3 class="fs-8 fw-bolder text-center";>Datos personales</h3>
+                    <div class="overflow-auto" class="bd-example-snippet bd-code-snippet text-start">
+                      <h3 class="fs-8 fw-bolder text-center" ;>Datos personales</h3>
                       <div class="bd-example mt-5">
                         <table class="table table-sm table-bordered">
                           <tbody>
                             <?php
                             ?>
-                                <!-- Se mantendrá oculto el identificador del estudiante, es necesario para que se lleve a la página actualizar y quede identificado a quien se le realizará el cambio en la bd -->
-                              <type="hidden"  <?php echo $registro['id_estudiante']; ?>>
+                            <!-- Se mantendrá oculto el identificador del estudiante, es necesario para que se lleve a la página actualizar y quede identificado a quien se le realizará el cambio en la bd -->
+                            <type="hidden" <?php echo $registro['id_estudiante']; ?>>
 
                               <input type="hidden" name="id_estudiante" value="<?php echo $row['id_estudiante'] ?>">
 
-                            <tr>
-                              <td scope="col"> Nombres : <?php echo " " . $registro['nombre_estudiante']; ?></td>
-                              <td scope="col">Apellidos: <?php echo  " " . $registro['apellido_estudiante']; ?></td>
-                            </tr>
-                            <tr>
-                              <td>Número de documento: <?php echo  " " . $registro['documento_estudiante']; ?></td>
-                              <td>Fecha de nacimiento: <?php echo " " . $registro['fechadenacimiesto_estudiante']; ?></td>
-                            </tr>
-                            <tr>
-                              <td>Número de celular: <?php echo " " . $registro['numerocontacto_estudiante']; ?></td>
-                              <td>ciudad de residencia: <?php echo " " . $registro['ciudad_estudiante']; ?> </td>
-                            </tr>
-                            <tr>
-                              <td scope="col">Email: <?php echo " " . $registro['email_estudiante']; ?></td>
-                              <td scope="col">Numero del acudiente: <?php echo  " " . $registro['acudiente__estudiante']; ?></td>
-                            </tr>
-                            <tr>
-                              <td scope="col">Curso: <?php echo "" . $registro['curso_estudiante']; ?></td>
-                              <td scope="col">Horario: <?php echo "" . $registro['horario_estudiante']; ?></td>
+                              <tr>
+                                <td scope="col"> Nombres : <?php echo " " . $registro['nombre_estudiante']; ?></td>
+                                <td scope="col">Apellidos: <?php echo  " " . $registro['apellido_estudiante']; ?></td>
+                              </tr>
+                              <tr>
+                                <td>Número de documento: <?php echo  " " . $registro['documento_estudiante']; ?></td>
+                                <td>Fecha de nacimiento: <?php echo " " . $registro['fechadenacimiesto_estudiante']; ?></td>
+                              </tr>
+                              <tr>
+                                <td>Número de celular: <?php echo " " . $registro['numerocontacto_estudiante']; ?></td>
+                                <td>ciudad de residencia: <?php echo " " . $registro['ciudad_estudiante']; ?> </td>
+                              </tr>
+                              <tr>
+                                <td scope="col">Email: <?php echo " " . $registro['email_estudiante']; ?></td>
+                                <td scope="col">Numero del acudiente: <?php echo  " " . $registro['acudiente__estudiante']; ?></td>
+                              </tr>
+                              <tr>
+                                <td scope="col">Curso: <?php echo "" . $registro['curso_estudiante']; ?></td>
+                                <td scope="col">Horario: <?php echo "" . $registro['horario_estudiante']; ?></td>
 
-                            </tr>
-                            <?php
+                              </tr>
+                              <?php
 
 
-                            ?>
+                              ?>
                           </tbody>
                         </table>
                         </tr>
                         <!-- ubica los botones en la parte inferior izquierda del documento -->
                         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                           <!-- lleva el identidcador por POST a la págima actualizar -->
-                          <th><a href="gestionactualizar.php?id=<?php echo $registro['id_estudiante']?>" class="btn btn-warning">Editar</a></th>
+                          <!-- lleva el identidcador por POST a la págima actualizar -->
+                          <th><a href="gestionactualizar.php?id=<?php echo $registro['id_estudiante'] ?>" class="btn btn-warning">Editar</a></th>
                           <!-- me dirige a la página de confirmación para elimenar el usuario -->
                           <th><a href="gestionborrar.php" class="btn btn-danger">Eliminar</a></th>
 
 
                         </div>
                       </div>
-                                                <!-- limpia el espacio para realizar otra consulta -->
-                                                <th><a href="gestion.php" class="btn btn-info">Limpiar</a></th>
+                      <!-- limpia el espacio para realizar otra consulta -->
+                      <th><a href="gestion.php" class="btn btn-info">Limpiar</a></th>
                     </div>
                   </div>
 
@@ -255,11 +254,11 @@ if( $validar == null || $validar = ''){
           if ($contadornoexiste == 0 and $contadorvacio == 0) {
             ?>
             <div class="alert alert-danger" role="alert">
-            <center>
-              <strong>Estudiante no encontrado en el sistema.</strong>
-              <br>
-              <!-- (Si no existe en la base de datos) Boton para crear un nuevo estudiante -->
-         
+              <center>
+                <strong>Estudiante no encontrado en el sistema.</strong>
+                <br>
+                <!-- (Si no existe en la base de datos) Boton para crear un nuevo estudiante -->
+
             </div>
             <br>
             <a href="../paginas/gestioncrear.php"> <button type="button" class=" d-grid gap-2 mx-auto btn btn-success"> Crear estudiante</button></a>

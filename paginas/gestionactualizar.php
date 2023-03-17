@@ -5,11 +5,10 @@ error_reporting(0);
 
 $validar = $_SESSION['usuario'];
 
-if( $validar == null || $validar = ''){
+if ($validar == null || $validar = '') {
 
   header("Location: empleado.php");
   die();
-  
 }
 ?>
 <!DOCTYPE html>
@@ -118,84 +117,84 @@ if( $validar == null || $validar = ''){
     $row = mysqli_fetch_array($query);
     ?>
     <div class="container mt-5">
-    <h1 class="display-4 fw-bold lh-2 text-center">Editar datos del estudiante</h1>
+      <h1 class="display-4 fw-bold lh-2 text-center">Editar datos del estudiante</h1>
 
       <form action="gestionupdate.php" method="POST">
 
         <input type="hidden" name="id_estudiante" value="<?php echo $row['id_estudiante'] ?>">
 
-        <div class="row g-3 align-items-center">  
+        <div class="row g-3 align-items-center">
 
           <div class="col-sm-6  mt-5">
-              <label class="form-label">Número de documento</label>
-              <input type="text" class="form-control" name="documento" placeholder="Nombre" value="<?php echo $row['documento_estudiante'] ?>" disabled>
+            <label class="form-label">Número de documento</label>
+            <input type="text" class="form-control" name="documento" placeholder="Nombre" value="<?php echo $row['documento_estudiante'] ?>" disabled>
           </div>
 
           <div class="col-sm-4  mt-5">
-          <label class="form-label" type="hidden">-</label><br>
-          <a href="gestionactualizardoc.php?id=<?php echo $row['id_estudiante'] ?>" class="btn btn-warning">Modificar documento</a> 
+            <label class="form-label" type="hidden">-</label><br>
+            <a href="gestionactualizardoc.php?id=<?php echo $row['id_estudiante'] ?>" class="btn btn-warning">Modificar documento</a>
           </div>
 
           <div class="col-sm-6">
-              <label class="form-label">Nombre:</label>
-              <input type="text" class="form-control" name="nombre" placeholder="Nombre" value="<?php echo $row['nombre_estudiante'] ?>">
+            <label class="form-label">Nombre:</label>
+            <input type="text" class="form-control" name="nombre" placeholder="Nombre" value="<?php echo $row['nombre_estudiante'] ?>">
           </div>
           <div class="col-sm-6">
-              <label class="form-label">Apellidos:</label>
-              <input type="text" class="form-control" name="apellido" placeholder="apellido" value="<?php echo $row['apellido_estudiante'] ?>">
+            <label class="form-label">Apellidos:</label>
+            <input type="text" class="form-control" name="apellido" placeholder="apellido" value="<?php echo $row['apellido_estudiante'] ?>">
           </div>
           <div class="col-sm-6">
-              <label class="form-label">Correo electrónico:</label>
-              <input type="email" class="form-control" name="email" placeholder="email" value="<?php echo $row['email_estudiante'] ?>">
+            <label class="form-label">Correo electrónico:</label>
+            <input type="email" class="form-control" name="email" placeholder="email" value="<?php echo $row['email_estudiante'] ?>">
           </div>
           <div class="col-sm-6">
-              <label class="form-label">Fecha de nacimiento:</label>
-              <input type="date" class="form-control" name="fecha" placeholder="fecha" value="<?php echo $row['fechadenacimiesto_estudiante'] ?>">
+            <label class="form-label">Fecha de nacimiento:</label>
+            <input type="date" class="form-control" name="fecha" placeholder="fecha" value="<?php echo $row['fechadenacimiesto_estudiante'] ?>">
           </div>
           <div class="col-sm-6">
-              <label class="form-label">Numero de teléfono:</label>
-              <input type="text" class="form-control" name="numero_estudiante" placeholder="numero_estudiante" value="<?php echo $row['numerocontacto_estudiante'] ?>">
+            <label class="form-label">Numero de teléfono:</label>
+            <input type="text" class="form-control" name="numero_estudiante" placeholder="numero_estudiante" value="<?php echo $row['numerocontacto_estudiante'] ?>">
           </div>
           <div class="col-sm-6">
-              <label class="form-label">Ciudad de residencia</label>
-              <input type="text" class="form-control" name="ciudad" placeholder="ciudad" value="<?php echo $row['ciudad_estudiante'] ?>">
+            <label class="form-label">Ciudad de residencia</label>
+            <input type="text" class="form-control" name="ciudad" placeholder="ciudad" value="<?php echo $row['ciudad_estudiante'] ?>">
           </div>
           <div class="col-sm-6">
-              <label class="form-label">Discapacidad:</label>
-              <select class="form-select form-control" name="discapacidad" placeholder="discapacidad" value="<?php echo $row['discapacidad_estudiante']?>">
-                  <!-- Lista desplegable -->
-                  <option selected value="<?php echo $row['horario_estudiante']?>"><?php echo $row['discapacidad_estudiante']?> </option>
-                  <option value="Si">Si</option>
-                  <option value="No">No</option>
-                </select>
-          </div>
-
-          <div class="col-sm-6">
-              <label class="form-label">Programa en curso:</label>
-              <select class="form-select form-control" name="curso" placeholder="curso" value="<?php echo $row['curso_estudiante']?>">
-                  <!-- Lista desplegable -->
-                  <option selected value="<?php echo $row['horario_estudiante']?>"><?php echo $row['curso_estudiante']?> </option>
-                  <option value="Validación del bachillerato">Validación del bachillerato</option>
-                  <option value="PREICFES - Saber 11">Pre-Icfes</option>
-                  <option value="Pre - Universitario">Pre-Universitario</option>
-                </select>  
+            <label class="form-label">Discapacidad:</label>
+            <select class="form-select form-control" name="discapacidad" placeholder="discapacidad" value="<?php echo $row['discapacidad_estudiante'] ?>">
+              <!-- Lista desplegable -->
+              <option selected value="<?php echo $row['horario_estudiante'] ?>"><?php echo $row['discapacidad_estudiante'] ?> </option>
+              <option value="Si">Si</option>
+              <option value="No">No</option>
+            </select>
           </div>
 
           <div class="col-sm-6">
-              <label class="form-label">Número de acudiente:</label>
-              <input type="text" class="form-control" name="acudiente" placeholder="acudiente" value="<?php echo $row['acudiente__estudiante'] ?>">
+            <label class="form-label">Programa en curso:</label>
+            <select class="form-select form-control" name="curso" placeholder="curso" value="<?php echo $row['curso_estudiante'] ?>">
+              <!-- Lista desplegable -->
+              <option selected value="<?php echo $row['horario_estudiante'] ?>"><?php echo $row['curso_estudiante'] ?> </option>
+              <option value="Validación del bachillerato">Validación del bachillerato</option>
+              <option value="PREICFES - Saber 11">Pre-Icfes</option>
+              <option value="Pre - Universitario">Pre-Universitario</option>
+            </select>
           </div>
-                                                                                                                                                                                                        
+
           <div class="col-sm-6">
-              <label class="form-label">Horario de estudio</label>
-              <select class="form-select form-control"  name="horario" placeholder="Horario de estudio" value="<?php echo $row['horario_estudiante']?>">
-                  <!-- Lista desplegable -->
-                  <option selected value="<?php echo $row['horario_estudiante']?>"><?php echo $row['horario_estudiante']?> </option>
-                  <option value="Martes y jueves de 8:00 am a 10:30 am">Martes y jueves 8:00a.m. a 10:30a.m.</option>
-                  <option value="Martes y jueves de 6:30 pm a 09:00 pm">Martes y jueves 6:30p.m. a 09:00p.m.</option>
-                  <option value="Sábados de 08:00 am a 01:00 pm">Sábados 08:00a.m. a 01:00p.m.</option>
-                  <option value="Domingos de 08:00 am a 01:00 pm">Domingos 08:00a.m. a 01:00p.m.</option>
-                </select>                                                                                                          
+            <label class="form-label">Número de acudiente:</label>
+            <input type="text" class="form-control" name="acudiente" placeholder="acudiente" value="<?php echo $row['acudiente__estudiante'] ?>">
+          </div>
+
+          <div class="col-sm-6">
+            <label class="form-label">Horario de estudio</label>
+            <select class="form-select form-control" name="horario" placeholder="Horario de estudio" value="<?php echo $row['horario_estudiante'] ?>">
+              <!-- Lista desplegable -->
+              <option selected value="<?php echo $row['horario_estudiante'] ?>"><?php echo $row['horario_estudiante'] ?> </option>
+              <option value="Martes y jueves de 8:00 am a 10:30 am">Martes y jueves 8:00a.m. a 10:30a.m.</option>
+              <option value="Martes y jueves de 6:30 pm a 09:00 pm">Martes y jueves 6:30p.m. a 09:00p.m.</option>
+              <option value="Sábados de 08:00 am a 01:00 pm">Sábados 08:00a.m. a 01:00p.m.</option>
+              <option value="Domingos de 08:00 am a 01:00 pm">Domingos 08:00a.m. a 01:00p.m.</option>
+            </select>
           </div>
           <div class="col-sm-6">
             <input type="hidden" name="id_estudiante" value="<?php echo $row['id_estudiante'] ?>">

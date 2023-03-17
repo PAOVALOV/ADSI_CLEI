@@ -113,7 +113,7 @@
             <?php
 
             require_once '../conexion/conexion.php';  /*LLama la conexión*/
-           $db = new db_conexion();               /*Abre la base de datos*/
+            $db = new db_conexion();               /*Abre la base de datos*/
 
             $consultaestudiante = "";
             $contadornoexiste = 0;
@@ -125,44 +125,46 @@
 
               if ($consultaestudiante == "") {             /*si la cedula esta en blanco informa mensaje, sino hace la consulta*/
                 // Imprime una alerta cuando el campo está vacio
-                $contadorvacio ++;
+                $contadorvacio++;
 
-                ?>
+            ?>
                 <br>
-                <br>        
-                  <div class="container formulario"></div>
-                      <div class="alert alert-danger align-items-center" role="alert" >
-                      <strong>Error!</strong> El numero de cédula es obligatorio.
-                      </div><hr class="my-4">
-                  </div>
+                <br>
+                <div class="container formulario"></div>
+                <div class="alert alert-danger align-items-center" role="alert">
+                  <strong>Error!</strong> El numero de cédula es obligatorio.
+                </div>
+                <hr class="my-4">
+        </div>
 
-                <?php
+        <?php
               }
 
               if ($consultaestudiante <> 0) {                              //Realiza la consuta 
-              $sql = "SELECT documento_estudiante FROM estudiantes
+                $sql = "SELECT documento_estudiante FROM estudiantes
                       WHERE documento_estudiante ='$consultaestudiante'";
 
                 $resultado = mysqli_query($db->conectar(), $sql);         /*pasa la query a la variable resultado*/
                 while ($registro = mysqli_fetch_array($resultado)) {      /*pasa a vector*/
-                $db->db_cerrar();
+                  $db->db_cerrar();
 
-                  if ($consultaestudiante == $registro['documento_estudiante']) { 
-                    $contadornoexiste ++;                                                         //Si existe realiza la consulta e informa que puede ver el informe
-                    ?>
+                  if ($consultaestudiante == $registro['documento_estudiante']) {
+                    $contadornoexiste++;                                                         //Si existe realiza la consulta e informa que puede ver el informe
+        ?>
 
-                      <br>
-                      <br>
-                      <a href="consulta.php?documento=<?php echo $consultaestudiante ?>"><button type="button" method="POST" action="consulta.php" class="btn btn-success">¡Estudiante encontrado! <br> Ver consulta</button><hr class="my-4">
-</a>
-                    
-                    <?php
-                    
+            <br>
+            <br>
+            <a href="consulta.php?documento=<?php echo $consultaestudiante ?>"><button type="button" method="POST" action="consulta.php" class="btn btn-success">¡Estudiante encontrado! <br> Ver consulta</button>
+              <hr class="my-4">
+            </a>
+
+    <?php
+
                   }
                 }
               }
-              
-              if ($contadornoexiste == 0 and $contadorvacio == 0){ 
+
+              if ($contadornoexiste == 0 and $contadorvacio == 0) {
                 echo '
                 <br>
                 <br>        
@@ -174,13 +176,12 @@
         
                   </div>';
               }
-            
-            }  
-            ?>
-            <small class="text-muted"> Año 2022</small>
-          </form>
-        </div>
+            }
+    ?>
+    <small class="text-muted"> Año 2022</small>
+    </form>
       </div>
+    </div>
     </div>
   </main>
 

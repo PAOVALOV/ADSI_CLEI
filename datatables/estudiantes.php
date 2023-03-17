@@ -123,9 +123,9 @@
     <div class="row overflow-auto">
       <nav class="navbar bg-light">
     </div>
-      </nav>
+    </nav>
     <div class="container overflow-auto"><br>
-    <h1 class="text-center fw-bold">Estudiantes en el Instituto CLEI</h1>
+      <h1 class="text-center fw-bold">Estudiantes en el Instituto CLEI</h1>
 
       <div class="row">
         <div>

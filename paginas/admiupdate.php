@@ -2,19 +2,19 @@
 
 require_once '../conexion/conexion.php'; /*LLama la conexión*/
 
-$db=new db_conexion();
+$db = new db_conexion();
 
 
-$id=$_POST['id_login'];
-$nombre=$_POST['nombre'];
-$apellido=$_POST['apellido'];
-$documento=$_POST['documento'];
-$usuario=$_POST['usuario'];
-$contrasena=$_POST['contrasena'];
-$cargo=$_POST['cargo'];
+$id = $_POST['id_login'];
+$nombre = $_POST['nombre'];
+$apellido = $_POST['apellido'];
+$documento = $_POST['documento'];
+$usuario = $_POST['usuario'];
+$contrasena = $_POST['contrasena'];
+$cargo = $_POST['cargo'];
 
 
-$sql="UPDATE usuarios SET
+$sql = "UPDATE usuarios SET
 id_login='$id',
 nombreempleado_login='$nombre',
 apellidoempleado_login='$apellido',
@@ -28,10 +28,6 @@ WHERE id_login ='$id'";
 
 $query = mysqli_query($db->conectar(), $sql);           /*pasa la query a la variable resultado*/
 
-    if($query){
-        Header("Location:administrador.php");
-    }
-?>
-
-
-   
+if ($query) {
+    Header("Location:administrador.php");
+}

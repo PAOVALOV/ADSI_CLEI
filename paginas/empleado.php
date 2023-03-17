@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es" class="h-100 ">
 
@@ -63,7 +62,7 @@
   </header>
 
 
-<!-- LOGIN DE INGRESO -->
+  <!-- LOGIN DE INGRESO -->
   <main class="form-signin w-100 m-auto text-center" style="padding-top: 50px;">
     <form class="p-4 p-md-12 border rounded-4 border bg-light bg-gradient p-2 border-5" action="_functions.php" method="POST">
 
@@ -71,16 +70,16 @@
       <h1 class="h3 mb-3 fw-normal fw-bolder">Acceso</h1>
 
       <div class="form-floating">
-        <input type="text" class="form-control"  name="usuario" required>
+        <input type="text" class="form-control" name="usuario" required>
         <label for="floatingInput"> Usuario </label>
       </div>
 
       <div class="form-floating">
-      <input type="password" name="contrasena"  class="form-control" required>
+        <input type="password" name="contrasena" class="form-control" required>
 
         <label for="password">Contraseña:</label><br>
         <input type="hidden" name="accion" value="acceso_user">
-       </div>
+      </div>
 
       <button class="w-100 btn btn-lg btn-primary" name="enviar" type="submit">Ingresar</button>
       <br>

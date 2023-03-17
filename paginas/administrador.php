@@ -5,11 +5,10 @@ error_reporting(0);
 
 $validar = $_SESSION['usuario'];
 
-if( $validar == null || $validar = '' ){
+if ($validar == null || $validar = '') {
 
   header("Location: systemadministrador.php");
   die();
-  
 }
 ?>
 
@@ -112,27 +111,27 @@ if( $validar == null || $validar = '' ){
     <!-- Espacio entre el menú y la página del contenido de gestión -->
     <div class="b-example-divider"></div>
 
-    
+
 
     <div class="container">
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Tenth navbar example">
-      
-    <div class="container-fluid">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample08" aria-controls="navbarsExample08" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Tenth navbar example">
 
-      <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample08">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Lista de Usuarios</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="administradoruser.php">Agregar Usuario</a>
-          </li>
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample08" aria-controls="navbarsExample08" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-          <!-- <li class="nav-item dropdown">
+          <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample08">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Lista de Usuarios</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="administradoruser.php">Agregar Usuario</a>
+              </li>
+
+              <!-- <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="#">Action</a></li>
@@ -140,10 +139,10 @@ if( $validar == null || $validar = '' ){
               <li><a class="dropdown-item" href="#">Something else here</a></li>
             </ul>
           </li> -->
-        </ul>
-      </div>
-    </div>
-  </nav>
+            </ul>
+          </div>
+        </div>
+      </nav>
 
 
       <!-- Vista de los integrantes del perosnal de la institución -->
@@ -161,7 +160,7 @@ if( $validar == null || $validar = '' ){
         <div class="row justify-content-md-center">
 
           <br>
-          <div class=""> 
+          <div class="">
             <table class="table border border-dark border-3" style="padding: 50px ">
               <!-- se asigna el nombre de cabecera de la columna -->
               <thead class="table-success table-dark table-bordered">
@@ -172,9 +171,9 @@ if( $validar == null || $validar = '' ){
                   <th>Documento</th>
                   <th>Usuario</th>
                   <th>Contraseña</th>
-                  <th>Cargo</th>            
+                  <th>Cargo</th>
                   <th></th>
-                 <th></th>
+                  <th></th>
 
                 </tr>
               </thead>
@@ -183,9 +182,9 @@ if( $validar == null || $validar = '' ){
                 <?php
                 while ($row = mysqli_fetch_array($query)) {
                 ?>
-                <!-- Vistas de los datos de los empleados -->
+                  <!-- Vistas de los datos de los empleados -->
                   <tr>
-                    <th ><?php echo $row['id_login'] ?></th>
+                    <th><?php echo $row['id_login'] ?></th>
                     <th><?php echo $row['nombreempleado_login'] ?></th>
                     <th><?php echo $row['apellidoempleado_login'] ?></th>
                     <th><?php echo $row['documentoempleado_login'] ?></th>

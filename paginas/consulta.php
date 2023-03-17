@@ -102,7 +102,7 @@
             </div>
             <div class="container p-4 p-md-12 border rounded-4 border bg-light bg-gradient p-2 border-5 text-center" style="padding: 100px;">
                 <h1 class="fs-8 fw-bolder">Bienvenid@</h1>
-                <p class="fs-5" ><?php echo $registro['nombre_estudiante'] . " " . $registro['apellido_estudiante']; ?> <br> Acontinuación podrás visiualizar tu estado en la Institución </p>
+                <p class="fs-5"><?php echo $registro['nombre_estudiante'] . " " . $registro['apellido_estudiante']; ?> <br> Acontinuación podrás visiualizar tu estado en la Institución </p>
                 <div class="bd-example-snippet bd-code-snippet text-start">
                     <p class="fs-4 text fw-bolder" ;>Datos personales:</p>
                     <div class="bd-example">
@@ -140,10 +140,10 @@
                             </tbody>
                         </table>
                     </div>
-<strong></strong>
+                    <strong></strong>
 
 
-                    <p class="fs-4 text fw-bolder";>Pagos realizados:</p>
+                    <p class="fs-4 text fw-bolder" ;>Pagos realizados:</p>
                     <div class="bd-example">
                         <table class="table table-striped table-bordered border border-5">
                             <tbody>

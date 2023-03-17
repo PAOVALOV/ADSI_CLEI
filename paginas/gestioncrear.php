@@ -5,11 +5,10 @@ error_reporting(0);
 
 $validar = $_SESSION['usuario'];
 
-if( $validar == null || $validar = ''){
+if ($validar == null || $validar = '') {
 
   header("Location: empleado.php");
   die();
-  
 }
 ?>
 
@@ -132,12 +131,12 @@ if( $validar == null || $validar = ''){
               </div>
 
               <div class="col-md-6 mb-3">
-                <label for="Apellido" class="form-label"  require>Apellidos</label>
+                <label for="Apellido" class="form-label" require>Apellidos</label>
                 <input type="text" class="form-control" name="apellido_form">
               </div>
 
               <div class="col-md-6 mb-3">
-                <label for="email_estudiante" class="form-label"  require>Correo</label>
+                <label for="email_estudiante" class="form-label" require>Correo</label>
                 <input type="email" class="form-control" name="email_form">
               </div>
 
@@ -149,7 +148,7 @@ if( $validar == null || $validar = ''){
 
               <br>
               <div class="col-md-6 mb-3">
-                <label for="Número del estudiante" class="form-label"  require>Número del estudiante</label>
+                <label for="Número del estudiante" class="form-label" require>Número del estudiante</label>
                 <input type="text" class="form-control" name="numero_estudiante_form">
               </div>
 

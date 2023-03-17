@@ -5,11 +5,10 @@ error_reporting(0);
 
 $validar = $_SESSION['usuario'];
 
-if( $validar == null || $validar = ''){
+if ($validar == null || $validar = '') {
 
   header("Location: empleado.php");
   die();
-  
 }
 ?>
 
@@ -112,27 +111,27 @@ if( $validar == null || $validar = ''){
     <!-- Espacio entre el menú y la página del contenido de gestión -->
     <div class="b-example-divider"></div>
 
-    
+
 
     <div class="container">
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Tenth navbar example">
-      
-    <div class="container-fluid">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample08" aria-controls="navbarsExample08" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Tenth navbar example">
 
-      <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample08">
-        <ul class="navbar-nav ">
-        <li class="nav-item ">
-            <a class="nav-link " href="administrador.php">Lista de Usuarios</a>
-          </li>
-          <div class="vr"></div>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="administradoruser.php">Agregar Usuario</a>
-          </li>
-<!-- 
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample08" aria-controls="navbarsExample08" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample08">
+            <ul class="navbar-nav ">
+              <li class="nav-item ">
+                <a class="nav-link " href="administrador.php">Lista de Usuarios</a>
+              </li>
+              <div class="vr"></div>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="administradoruser.php">Agregar Usuario</a>
+              </li>
+              <!-- 
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
             <ul class="dropdown-menu">
@@ -141,10 +140,10 @@ if( $validar == null || $validar = ''){
               <li><a class="dropdown-item" href="#">Something else here</a></li>
             </ul>
           </li> -->
-        </ul>
-      </div>
-    </div>
-  </nav>
+            </ul>
+          </div>
+        </div>
+      </nav>
 
 
       <!-- Vista de los integrantes del perosnal de la institución -->
@@ -152,50 +151,50 @@ if( $validar == null || $validar = ''){
       <div class="container mt-5 ">
         <div class="row justify-content-md-center">
 
-          <div class="col-md-5 border border-secondary border-3" style="padding: 50px " >
-            <div >
-            <h1 class="text-center" >Ingrese datos</h1>
-            <form class=" mt-5" action="" method="POST">
-              <input type="hidden" class="form-control mb-3" name="id_login" placeholder="id_login">
-              <input type="text" class="form-control mb-3" name="nombre" placeholder="Nombre">
-              <input type="text" class="form-control mb-3" name="apellido" placeholder="Apellido">
-              <input type="text" class="form-control mb-3" name="documento" placeholder="Documento">
-              <input type="text" class="form-control mb-3" name="usuario" placeholder="Usuario">
-              <input type="text" class="form-control mb-3" name="contrasena" placeholder="Passport">
-              <label class="form-label">Cargo del usuario:</label>
-              <select class="form-select form-control mb-3" name="cargo" placeholder="cargo" >
+          <div class="col-md-5 border border-secondary border-3" style="padding: 50px ">
+            <div>
+              <h1 class="text-center">Ingrese datos</h1>
+              <form class=" mt-5" action="" method="POST">
+                <input type="hidden" class="form-control mb-3" name="id_login" placeholder="id_login">
+                <input type="text" class="form-control mb-3" name="nombre" placeholder="Nombre">
+                <input type="text" class="form-control mb-3" name="apellido" placeholder="Apellido">
+                <input type="text" class="form-control mb-3" name="documento" placeholder="Documento">
+                <input type="text" class="form-control mb-3" name="usuario" placeholder="Usuario">
+                <input type="text" class="form-control mb-3" name="contrasena" placeholder="Passport">
+                <label class="form-label">Cargo del usuario:</label>
+                <select class="form-select form-control mb-3" name="cargo" placeholder="cargo">
                   <!-- Lista desplegable -->
                   <option selected> Elegir rol</option>
                   <option value="Empleado">Empleado</option>
                   <option value="Administrador">Validación</option>
-                </select>  
+                </select>
 
-              <input type="submit" name="btn_new"class="btn btn-primary">
+                <input type="submit" name="btn_new" class="btn btn-primary">
 
-          <br>
-          <?php
+                <br>
+                <?php
 
-$contadorvacio  = "";                                  /*Variables de control para validar si está vacio y si existe la consulta*/
-$contadorexiste = "";
+                $contadorvacio  = "";                                  /*Variables de control para validar si está vacio y si existe la consulta*/
+                $contadorexiste = "";
 
-if (isset($_POST['btn_new'])) {
+                if (isset($_POST['btn_new'])) {
 
-  $contadorvacio  = 0;                              /*Inicializa las variables en 0 para trabajar*/
-  $contadorexiste = 0;
+                  $contadorvacio  = 0;                              /*Inicializa las variables en 0 para trabajar*/
+                  $contadorexiste = 0;
 
-  $id = $_POST['id_login'];
-  $nombre = $_POST['nombre'];
-  $apellido = $_POST['apellido'];
-  $documento = $_POST['documento'];
-  $usuario = $_POST['usuario'];
-  $contrasena = $_POST['contrasena'];
-  $cargo = $_POST['cargo'];
-  
+                  $id = $_POST['id_login'];
+                  $nombre = $_POST['nombre'];
+                  $apellido = $_POST['apellido'];
+                  $documento = $_POST['documento'];
+                  $usuario = $_POST['usuario'];
+                  $contrasena = $_POST['contrasena'];
+                  $cargo = $_POST['cargo'];
 
-  if (
-    $documento        == "" 
-  ) {                                     /*si está alguno de los campos vacios*/
-    echo "
+
+                  if (
+                    $documento        == ""
+                  ) {                                     /*si está alguno de los campos vacios*/
+                    echo "
 <div class='container'>
   <center>
   <br>
@@ -205,72 +204,73 @@ if (isset($_POST['btn_new'])) {
   </center>
 </div>";
 
-    $contadorvacio++;                          /*Este acumulador se marca cuando el campo está vacio*/
-  } else {
+                    $contadorvacio++;                          /*Este acumulador se marca cuando el campo está vacio*/
+                  } else {
 
-    require_once '../conexion/conexion.php';                    /*LLama la conexión*/
+                    require_once '../conexion/conexion.php';                    /*LLama la conexión*/
 
-    $db = new db_conexion();                                    /*Abre la base de datos*/
-    $sql = "SELECT * FROM usuarios        /*Realiza la consuta*/ 
+                    $db = new db_conexion();                                    /*Abre la base de datos*/
+                    $sql = "SELECT * FROM usuarios        /*Realiza la consuta*/ 
           WHERE documentoempleado_login ='$documento'";
 
-    $resultado = mysqli_query($db->conectar(), $sql);           /*pasa la query a la variable resultado*/
-    while ($registro = mysqli_fetch_array($resultado)) {        /*pasa a vector*/
-      $db->db_cerrar();
+                    $resultado = mysqli_query($db->conectar(), $sql);           /*pasa la query a la variable resultado*/
+                    while ($registro = mysqli_fetch_array($resultado)) {        /*pasa a vector*/
+                      $db->db_cerrar();
 
-      $contadorexiste++;                       /*Este acumulador se marca cuando el número existe en la DB*/
-    }
-  }
+                      $contadorexiste++;                       /*Este acumulador se marca cuando el número existe en la DB*/
+                    }
+                  }
 
 
-          if ($contadorexiste == 1) { 
-            require_once '../conexion/conexion.php';                    /*LLama la conexión*/
+                  if ($contadorexiste == 1) {
+                    require_once '../conexion/conexion.php';                    /*LLama la conexión*/
 
-            $db = new db_conexion();                                    /*Abre la base de datos*/
-            $sql = "SELECT * FROM usuarios        /*Realiza la consuta*/ 
+                    $db = new db_conexion();                                    /*Abre la base de datos*/
+                    $sql = "SELECT * FROM usuarios        /*Realiza la consuta*/ 
                   WHERE documentoempleado_login ='$documento'";
-        
-            $resultado = mysqli_query($db->conectar(), $sql);           /*pasa la query a la variable resultado*/
-            while ($registro = mysqli_fetch_array($resultado)) {        /*pasa a vector*/
-              $db->db_cerrar();
-        ?>
 
-            <div class='container formulario'> <br>
-              <center>
-                <div class='alert alert-danger' role='alert'>
-                  <strong>¡Error!</strong> El usuario ya está registrado.
-                </div>
-                <th><a href="admiactualizar.php?id=<?php echo  $registro['id_login'] ?>" class="btn btn-info">Editar</a></th>
-              </center>
-            </div>
-            
+                    $resultado = mysqli_query($db->conectar(), $sql);           /*pasa la query a la variable resultado*/
+                    while ($registro = mysqli_fetch_array($resultado)) {        /*pasa a vector*/
+                      $db->db_cerrar();
+                ?>
 
-        <?php
-          }
-        }
+                      <div class='container formulario'> <br>
+                        <center>
+                          <div class='alert alert-danger' role='alert'>
+                            <strong>¡Error!</strong> El usuario ya está registrado.
+                          </div>
+                          <th><a href="admiactualizar.php?id=<?php echo  $registro['id_login'] ?>" class="btn btn-info">Editar</a></th>
+                        </center>
+                      </div>
 
-  if ($contadorvacio == 0 and $contadorexiste == 0) {             /*Si no se acumuló ninguna de las variables de control, se debe hacer el Insert a la DB */
 
-    require_once '../conexion/conexion.php';                      /*LLama la conexión*/
+                <?php
+                    }
+                  }
 
-    $db = new db_conexion();                                      /*Abre la base de datos*/
-    mysqli_query($db->conectar(), "INSERT INTO usuarios VALUES('$id','$nombre','$apellido','$documento','$usuario','$contrasena','$cargo')");
+                  if ($contadorvacio == 0 and $contadorexiste == 0) {             /*Si no se acumuló ninguna de las variables de control, se debe hacer el Insert a la DB */
 
-    $db->db_cerrar();
-    echo "<div class='container formulario'>
+                    require_once '../conexion/conexion.php';                      /*LLama la conexión*/
+
+                    $db = new db_conexion();                                      /*Abre la base de datos*/
+                    mysqli_query($db->conectar(), "INSERT INTO usuarios VALUES('$id','$nombre','$apellido','$documento','$usuario','$contrasena','$cargo')");
+
+                    $db->db_cerrar();
+                    echo "<div class='container formulario'>
   <center><br>
   <div class='alert alert-success' role='alert'>
   <strong>Nuevo Usuario!</strong> Ingreso Con exito.
   </div>
   </center>";
-  };
-}    
-?>
+                  };
+                }
+                ?>
               </form>
             </div>
-          </div>        </div>
-
+          </div>
         </div>
+
+      </div>
 
 
 

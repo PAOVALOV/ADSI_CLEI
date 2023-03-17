@@ -5,11 +5,10 @@ error_reporting(0);
 
 $validar = $_SESSION['usuario'];
 
-if( $validar == null || $validar = ''){
+if ($validar == null || $validar = '') {
 
   header("Location: empleado.php");
   die();
-  
 }
 
 ?>
@@ -124,7 +123,7 @@ if( $validar == null || $validar = ''){
 
 
     <!-- CONTENIDO DEL MODULO FINANCIERO -->
-    <div class="container my-5 hijo-2"> 
+    <div class="container my-5 hijo-2">
       <div class="row p-5 pb-5 pe-lg-5 pe-lg-5 rounded-3 border shadow-lg overflow-auto bg-light bg-gradient">
         <div class="text-center">
           <h1 class="display-4 fw-bold lh-2 text-center">Anexos Estudiantiles</h1><br>
@@ -193,151 +192,153 @@ if( $validar == null || $validar = ''){
 
                 if ($consultaestudiante == $registro['documento_estudiante']) {
                   $contadornoexiste++;
-                                                   //Resultado de la query
+                  //Resultado de la query
           ?>
 
-</div>
-<div>
-<figure class="text-center">
-  <blockquote class="blockquote">
-    <p>Anexos creados</p>
-  </blockquote>
-  <figcaption class="blockquote-footer">
-   De: <?php echo $registro['nombre_estudiante'] . " " . $registro['apellido_estudiante']; ?>  </figcaption>
-</figure>
-</div>
+        </div>
+        <div>
+          <figure class="text-center">
+            <blockquote class="blockquote">
+              <p>Anexos creados</p>
+            </blockquote>
+            <figcaption class="blockquote-footer">
+              De: <?php echo $registro['nombre_estudiante'] . " " . $registro['apellido_estudiante']; ?> </figcaption>
+          </figure>
+        </div>
 
-<table class="table table-striped table-bordered border border-5 bg-light bg-gradient">
-                            <tbody>
-                            <thead class="table-dark">
-                  <th>#</th>
-                  <th>Fecha del anexo</th>
-                  <th>Motivo</th>
-                  <th>Encargado</th>
-                  <th>Anexo</th> 
+        <table class="table table-striped table-bordered border border-5 bg-light bg-gradient">
+          <tbody>
+            <thead class="table-dark">
+              <th>#</th>
+              <th>Fecha del anexo</th>
+              <th>Motivo</th>
+              <th>Encargado</th>
+              <th>Anexo</th>
 
-  </thead>
-                                <tr>
-                                    <?php
-                                      $contador=0;
-                                    $sql2 = "SELECT * FROM novedades                                   WHERE documentoestudiante_novedades ='$consultaestudiante'";
+            </thead>
+            <tr>
+              <?php
+                  $contador = 0;
+                  $sql2 = "SELECT * FROM novedades                                   WHERE documentoestudiante_novedades ='$consultaestudiante'";
 
-                                    $resultado2 = mysqli_query($db->conectar(), $sql2);         /*pasa la query a la variable resultado*/
-                                    while ($registro2 = mysqli_fetch_array($resultado2)) {      /*pasa a vector*/
-                                      $contador++;
-                                        $db->db_cerrar()
+                  $resultado2 = mysqli_query($db->conectar(), $sql2);         /*pasa la query a la variable resultado*/
+                  while ($registro2 = mysqli_fetch_array($resultado2)) {      /*pasa a vector*/
+                    $contador++;
+                    $db->db_cerrar()
 
-                                    ?>
-                                <tr>
-                                    <td> <?php echo " " . $contador?></td>
-                                    <td> <?php echo " " . $registro2['fecha_novedades']; ?></td>
-                                    <td> <?php echo " " . $registro2['tipo_novedades']; ?></td>
-                                    <td> <?php echo " " . $registro2['empleado_novedades']; ?></td>
-                                    <td> <?php echo " " . $registro2['anexo_novedades']; ?></td>
-                                </tr>
+              ?>
+            <tr>
+              <td> <?php echo " " . $contador ?></td>
+              <td> <?php echo " " . $registro2['fecha_novedades']; ?></td>
+              <td> <?php echo " " . $registro2['tipo_novedades']; ?></td>
+              <td> <?php echo " " . $registro2['empleado_novedades']; ?></td>
+              <td> <?php echo " " . $registro2['anexo_novedades']; ?></td>
+            </tr>
 
-                    </div>
+      </div>
 
-                <?php
-                                    }
-                ?>
+    <?php
+                  }
+    ?>
 
-                </tr>
-                </tbody>
-                </table><br><hr t>
-
-
-
-                  <div class="container p-4 p-md-12 border rounded-4 border bg-light bg-gradient p-2 border-5 text-center" style="padding: 100px;">
-                    <div class="form-row">
-
-                    <h2>Agregar un nuevo Anexo</h2><br><hr>
-
-                      <div class="bd-example-snippet bd-code-snippet text-start">
+    </tr>
+    </tbody>
+    </table><br>
+    <hr t>
 
 
-                        <form class="row" method="POST" action="novedades.php">
-                        <input type="hidden" name="documento_form" value="<?php echo  $registro['documento_estudiante'] ?>">
 
-                          <div class="col-sm-6">
-                            <label class="form-label">Número de documento</label>
-                            <input type="text" class="form-control" name="documento_form" placeholder="Número de documento" value="<?php echo $registro['documento_estudiante'] ?>" disabled>
-                          </div>
+    <div class="container p-4 p-md-12 border rounded-4 border bg-light bg-gradient p-2 border-5 text-center" style="padding: 100px;">
+      <div class="form-row">
 
-                          <div class="col-md-6">
-                            <label for="inputState" class="form-label" value="<?php if (isset($novedad)) echo $novedad ?>">Tipo de novedad</label>
-                            <!-- Lista desplegable -->
-                            <select id="inputState" class="form-select" name="novedad_form">
-                              <option selected>Tipo de novedad</option>
-                              <option value="Acuerdo de pago">Acuerdo de pago</option>
-                              <option value="Retiro">Retiro</option>
-                              <option value="Suspención">Suspención</option>
-                              <option value="Reactivación">Reactivación</option>
-                              <option value="Cambio de horario">Cambio de horario</option>
-                              <option value="Certificado">Certificado</option>
-                            </select>
-                          </div>
+        <h2>Agregar un nuevo Anexo</h2><br>
+        <hr>
 
-                          <div class="col-md-6">
-                              <label for="inputState" class="form-label">Empleado encargado</label>
-                              <!-- Lista desplegable -->
-                              <select id="inputState" class="form-select" name="empleado_form">
-                                <option selected>Elige tu nombre</option>
-                                <option value="Julian Paez">Julian Paez</option>
-                                <option value="Laura Vanegas">Laura Vanegas</option>
-                                <option value="Sofia Torres">Sofia Torres</option>
-                                <option value="Mateo López">Mateo López</option>
-                              </select>
-                            </div>
-                            
-                            <div class="col-md-6 mb-3">
-                              <label for="fecha de nacimiento" class="form-label">Fecha de anexo</label>
-                              <input type="date" class="form-control" name="fecha_form">
-                            </div>
+        <div class="bd-example-snippet bd-code-snippet text-start">
 
 
-                            <div class="mb-3">
-                              <label for="exampleFormControlTextarea" class="form-label">Descripción del anexo</label>
-                              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="anexo_form"></textarea>
-                            </div>
+          <form class="row" method="POST" action="novedades.php">
+            <input type="hidden" name="documento_form" value="<?php echo  $registro['documento_estudiante'] ?>">
 
-                          
+            <div class="col-sm-6">
+              <label class="form-label">Número de documento</label>
+              <input type="text" class="form-control" name="documento_form" placeholder="Número de documento" value="<?php echo $registro['documento_estudiante'] ?>" disabled>
+            </div>
 
-                          <!-- <div class="col-md-6 mb-3">
+            <div class="col-md-6">
+              <label for="inputState" class="form-label" value="<?php if (isset($novedad)) echo $novedad ?>">Tipo de novedad</label>
+              <!-- Lista desplegable -->
+              <select id="inputState" class="form-select" name="novedad_form">
+                <option selected>Tipo de novedad</option>
+                <option value="Acuerdo de pago">Acuerdo de pago</option>
+                <option value="Retiro">Retiro</option>
+                <option value="Suspención">Suspención</option>
+                <option value="Reactivación">Reactivación</option>
+                <option value="Cambio de horario">Cambio de horario</option>
+                <option value="Certificado">Certificado</option>
+              </select>
+            </div>
+
+            <div class="col-md-6">
+              <label for="inputState" class="form-label">Empleado encargado</label>
+              <!-- Lista desplegable -->
+              <select id="inputState" class="form-select" name="empleado_form">
+                <option selected>Elige tu nombre</option>
+                <option value="Julian Paez">Julian Paez</option>
+                <option value="Laura Vanegas">Laura Vanegas</option>
+                <option value="Sofia Torres">Sofia Torres</option>
+                <option value="Mateo López">Mateo López</option>
+              </select>
+            </div>
+
+            <div class="col-md-6 mb-3">
+              <label for="fecha de nacimiento" class="form-label">Fecha de anexo</label>
+              <input type="date" class="form-control" name="fecha_form">
+            </div>
+
+
+            <div class="mb-3">
+              <label for="exampleFormControlTextarea" class="form-label">Descripción del anexo</label>
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="anexo_form"></textarea>
+            </div>
+
+
+
+            <!-- <div class="col-md-6 mb-3">
                   <label for="formFile" class="form-label">Subir comprobante de pago</label>
                   <input class="form-control" type="file" id="formFile">
                   </div> -->
 
-                          <br>
-                          <div class="col-12">
-                            <button type="submit" name="btn_anexo" class="btn btn-primary btn-lg">Subir anexo</button>
-                          </div>
+            <br>
+            <div class="col-12">
+              <button type="submit" name="btn_anexo" class="btn btn-primary btn-lg">Subir anexo</button>
+            </div>
 
-                        </form>
+          </form>
 
-                      </div>
-                    </div>
-                    
-
-                  <small class="text-muted"> Año 2022</small>
         </div>
+      </div>
 
-  <?php
+
+      <small class="text-muted"> Año 2022</small>
+    </div>
+
+<?php
                 }
               }
             }
           }
           if ($contadornoexiste == 0 and $contadorvacio == 0) {
-  ?>
-  <div class="alert alert-danger" role="alert">
-    <strong>Estudiante no encontrado en el sistema.</strong>
-    <br>
-    <!-- (Si no existe en la base de datos) Boton para crear un nuevo estudiante -->
+?>
+<div class="alert alert-danger" role="alert">
+  <strong>Estudiante no encontrado en el sistema.</strong>
+  <br>
+  <!-- (Si no existe en la base de datos) Boton para crear un nuevo estudiante -->
 
-  </div>
-  <br>
-  <a href="../paginas/gestioncrear.php"> <button type="button" class="btn btn-success"> Crear estudiante</button></a>
-  <br>
+</div>
+<br>
+<a href="../paginas/gestioncrear.php"> <button type="button" class="btn btn-success"> Crear estudiante</button></a>
+<br>
 
 <?php
           }
@@ -356,13 +357,11 @@ if (isset($_POST['btn_anexo'])) {
   $fecha = $_POST["fecha_form"];
   $anexo = $_POST["anexo_form"];
   $empleado = $_POST["empleado_form"];
- # $comprobante = $_POST["formFile"];
+  # $comprobante = $_POST["formFile"];
 
 
-  if ($documento    == "") 
-
-  { 
-                                       /*si está alguno de los campos vacios*/
+  if ($documento    == "") {
+    /*si está alguno de los campos vacios*/
     echo "
        <div class='container'>
          <center>
@@ -435,15 +434,15 @@ if (isset($_POST['btn_anexo'])) {
 }
 ?>
 
-      </div>
+</div>
 
 
-    </div>
-    </div>
+</div>
+</div>
 
 
 
-    <div class="b-example-divider"></div>
+<div class="b-example-divider"></div>
 
   </main>
 

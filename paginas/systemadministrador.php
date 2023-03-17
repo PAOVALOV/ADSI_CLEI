@@ -5,11 +5,10 @@ error_reporting(0);
 
 $validar = $_SESSION['usuario'];
 
-if( $validar == null || $validar = ''){
+if ($validar == null || $validar = '') {
 
   header("Location: empleado.php");
   die();
-  
 }
 ?>
 
@@ -149,7 +148,7 @@ if( $validar == null || $validar = ''){
         require_once '../conexion/conexion.php';
 
         if (isset($_POST['enviar'])) {
-          
+
 
           $db = new db_conexion();
 
@@ -164,19 +163,19 @@ if( $validar == null || $validar = ''){
 
             if ($_POST['contrasena'] == $row['password_administrador'] and $_POST['usuario'] == $row['user_administrador']) {
               // header('location:administrador.php');
-              echo '<script>window.location="'.'administrador.php"</script>"';
-            }  
+              echo '<script>window.location="' . 'administrador.php"</script>"';
+            }
 
         ?>
-          <br>
-          <div class="container">
-            <div class="alert alert-danger alert-dismissible fade show" role="alert">
-              <strong>Error! </strong> Usuario o contraseña incorrectos.
-              </button>
+            <br>
+            <div class="container">
+              <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>Error! </strong> Usuario o contraseña incorrectos.
+                </button>
+              </div>
             </div>
-          </div>
         <?php
- }
+          }
         }
 
 
