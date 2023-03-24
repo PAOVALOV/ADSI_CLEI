@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-    <title>Inicio</title>
+    <title>Informe Estudiante</title>
 
     <!-- Esto es bootstrap -->
     <link rel="stylesheet" href="../plugins/bootstrap/css/bootstrap.min.css">
@@ -27,7 +27,12 @@
             background-position: center center;
         }
     </style>
-
+  <script>
+    //Cuadro de diálogo de confirmación en JavaScript
+    function confirmarAccesoURL() {
+      return confirm("¿Está seguro que desea salir del sistema?");
+    }
+  </script>
 </head>
 
 <body background="../media/imagenes/fondoprincipal.jpg" ;>

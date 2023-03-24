@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-  <title>Inicio</title>
+  <title>Ingreso al sistema</title>
 
   <!-- Esto es bootstrap -->
   <link rel="stylesheet" href="../plugins/bootstrap/css/bootstrap.min.css">

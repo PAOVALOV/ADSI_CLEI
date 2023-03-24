@@ -20,7 +20,7 @@ if ($validar == null || $validar = '') {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="css/style.css" rel="stylesheet">
-  <title>Actualizar</title>
+  <title>Actualizar Usuario</title>
 
   <!-- Esto es bootstrap -->
   <link rel="stylesheet" href="../plugins/bootstrap/css/bootstrap.min.css">
@@ -28,6 +28,12 @@ if ($validar == null || $validar = '') {
 
   <!-- Este es mi estilo -->
   <link rel="stylesheet" href="../paginas/styles/system.css">
+  <script>
+    //Cuadro de diálogo de confirmación en JavaScript
+    function confirmarAccesoURL() {
+      return confirm("¿Está seguro que desea salir del sistema?");
+    }
+  </script>
 
 
 </head>
@@ -45,7 +51,7 @@ if ($validar == null || $validar = '') {
       <!-- Modulos del sistema -->
       <ul class="nav nav-pills flex-column mb-auto">
         <!-- Modulo de Inicio -->
-        <li class="nav-item " width="85" height="85">
+        <li class="nav-item " width="85" height="85">F
           <a href="../paginas/Inicio_del_sistema.php" class="nav-link text-white">
             <img src="../media/iconos/home.ico" class="img-fluid" style="padding-inline-end: 10px;" width="50" height="50" alt="">
             Inicio
@@ -99,14 +105,11 @@ if ($validar == null || $validar = '') {
       </ul>
       <hr>
       <div class="dropdown">
-        <a href="../index.html"><button type="button" class="btn btn-danger" style="background-color: rgb(168, 4, 4);">Salir del sistema</button></a>
+        <a href="_sesion/cerrarSesion.php" onclick="return confirmarAccesoURL()"><button type="button" class="btn btn-danger" style="background-color: rgb(168, 4, 4);">Salir del sistema</button></a>
 
       </div>
     </div>
     <!-- END SIDE BARD -->
-
-    <!-- Espacio entre el menú y la página del contenido de gestión -->
-    <div class="b-example-divider"></div>
 
     <div class="container">
 

@@ -23,7 +23,8 @@ if ($validar == null || $validar = '') {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-  <title>Inicio</title>
+  <title>Crear Usuario
+  </title>
 
   <!-- Esto es bootstrap -->
   <link rel="stylesheet" href="../plugins/bootstrap/css/bootstrap.min.css">
@@ -32,6 +33,13 @@ if ($validar == null || $validar = '') {
   <!-- Este es mi estilo -->
   <link rel="stylesheet" href="../paginas/styles/system.css">
 
+  <script>
+    //Cuadro de diálogo de confirmación en JavaScript
+    function confirmarAccesoURL() {
+      return confirm("¿Está seguro que desea salir del sistema?");
+      onclick = "return confirmarAccesoURL()"
+    }
+  </script>
 
 </head>
 
@@ -102,15 +110,11 @@ if ($validar == null || $validar = '') {
       </ul>
       <hr>
       <div class="dropdown">
-        <a href="_sesion/cerrarSesion.php"><button type="button" class="btn btn-danger" style="background-color: rgb(168, 4, 4);">Salir del sistema</button></a>
+        <a href="_sesion/cerrarSesion.php" onclick="return confirmarAccesoURL()"><button type="button" class="btn btn-danger" style="background-color: rgb(168, 4, 4);">Salir del sistema</button></a>
 
       </div>
     </div>
     <!-- END SIDE BARD -->
-
-    <!-- Espacio entre el menú y la página del contenido de gestión -->
-    <div class="b-example-divider"></div>
-
 
 
     <div class="container">
@@ -166,7 +170,7 @@ if ($validar == null || $validar = '') {
                   <!-- Lista desplegable -->
                   <option selected> Elegir rol</option>
                   <option value="Empleado">Empleado</option>
-                  <option value="Administrador">Validación</option>
+                  <option value="Administrador">Administrador</option>
                 </select>
 
                 <input type="submit" name="btn_new" class="btn btn-primary">
@@ -195,14 +199,14 @@ if ($validar == null || $validar = '') {
                     $documento        == ""
                   ) {                                     /*si está alguno de los campos vacios*/
                     echo "
-<div class='container'>
-  <center>
-  <br>
-    <div class='alert alert-danger' role='alert'>
-    <strong>Error!</strong> Los Campos con * son Obligatorios.
-    </div>
-  </center>
-</div>";
+                          <div class='container'>
+                            <center>
+                            <br>
+                              <div class='alert alert-danger' role='alert'>
+                              <strong>Error!</strong> Los Campos con * son Obligatorios.
+                              </div>
+                            </center>
+                          </div>";
 
                     $contadorvacio++;                          /*Este acumulador se marca cuando el campo está vacio*/
                   } else {

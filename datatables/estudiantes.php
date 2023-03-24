@@ -8,7 +8,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-  <title>Inicio del sistema</title>
+  <title>
+  Módulo de Estudiantes</title>
 
   <!-- Esto es bootstrap -->
   <link rel="stylesheet" href="../plugins/bootstrap/css/bootstrap.min.css">

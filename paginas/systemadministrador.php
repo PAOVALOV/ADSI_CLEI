@@ -22,7 +22,7 @@ if ($validar == null || $validar = '') {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-  <title>Inicio</title>
+  <title>Login Administrador</title>
 
   <!-- Esto es bootstrap -->
   <link rel="stylesheet" href="../plugins/bootstrap/css/bootstrap.min.css">
@@ -43,6 +43,13 @@ if ($validar == null || $validar = '') {
     }
   </style>
 
+
+  <script>
+    //Cuadro de diálogo de confirmación en JavaScript
+    function confirmarAccesoURL() {
+      return confirm("¿Está seguro que desea salir del sistema?");
+    }
+  </script>
 
 </head>
 
@@ -113,7 +120,7 @@ if ($validar == null || $validar = '') {
       </ul>
       <hr>
       <div class="dropdown">
-        <a href="_sesion/cerrarSesion.php"><button type="button" class="btn btn-danger" style="background-color: rgb(168, 4, 4);">Salir del sistema</button></a>
+        <a href="_sesion/cerrarSesion.php" onclick="return confirmarAccesoURL()"><button type="button" class="btn btn-danger" style="background-color: rgb(168, 4, 4);">Salir del sistema</button></a>
 
       </div>
     </div>
@@ -180,7 +187,7 @@ if ($validar == null || $validar = '') {
 
 
         ?>
-        <p class="mt-5 mb-3 text-muted">&copy; 2017–2022</p>
+        <p class="mt-5 mb-3 text-muted">&copy; 2023</p>
       </form>
     </div>
 
