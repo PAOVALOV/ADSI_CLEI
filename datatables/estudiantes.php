@@ -8,8 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-  <title>
-  Módulo de Estudiantes</title>
+  <title>Módulo de Estudiantes</title>
 
   <!-- Esto es bootstrap -->
   <link rel="stylesheet" href="../plugins/bootstrap/css/bootstrap.min.css">
@@ -24,18 +23,12 @@
 
 
   <script>
-    function ConfirmDemo() {
-      alert("¡Gracias por confirmar!");
-      window.location.href = "../index.html";
-      if (mensaje) {
-        alert("¡Haz denegado el mensaje!");
-      }
-      //Verificamos si el usuario denegó el mensaje
-      else {
-        alert("¡Haz denegado el mensaje!");
-      }
+    //Cuadro de diálogo de confirmación en JavaScript
+    function confirmarAccesoURL() {
+      return confirm("¿Está seguro que desea salir del sistema?");
     }
   </script>
+
 </head>
 
 <body>
@@ -98,7 +91,7 @@
 
         <!-- Modulo de Estudiantes -->
         <li>
-          <a href="../paginas/estudiantes.php" class="nav-link text-white active" aria-current="page">
+          <a href="../datatables/estudiantes.php" class="nav-link text-white active" aria-current="page">
             <img src="../media/iconos/Estudiante.ico" class="img-fluid" style="padding-inline-end: 10px;" width="50" height="50">
             Estudiantes
           </a>
@@ -108,10 +101,7 @@
 
       <div class="dropdown">
 
-
-
-
-        <a href="../index.html"><button type="button" onclick="ConfirmDemo();" class="btn btn-danger">Salir del sistema</button></a>
+        <a href="../index.html" onclick="return confirmarAccesoURL()"><button type="button" onclick="ConfirmDemo();" class="btn btn-danger">Salir del sistema</button></a>
 
       </div>
     </div>
